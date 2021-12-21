@@ -58,7 +58,7 @@ struct ContentView: View {
     [.seven,.eight,.nine,.multiply],
     [.four,.five,.six,.minus],
     [.one,.two,.three,.plus],
-    [.zero,.zero,.dot,.equals]
+    [.zero,.dot,.equals]
     ]
     
     //MARK: - BODY
