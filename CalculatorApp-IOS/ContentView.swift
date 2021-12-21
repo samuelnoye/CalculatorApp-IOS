@@ -33,8 +33,6 @@ enum CalculatorButton: String{
         case .percent: return "%"
         case .dot: return "."
         default: return "AC"
-            
-            
         }
     }
     
