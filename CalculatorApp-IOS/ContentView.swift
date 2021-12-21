@@ -7,14 +7,32 @@
 
 import SwiftUI
 
+enum CalculatorButton: String{
+    case zero, one, two, three, four, five, six, seven, eight, nine, dot
+    case equals, plus, minus, multiply, divide
+    case ac, plusMinus, percent
+    
+    var backgroundColor: Color{
+        switch self{
+        case .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .dot:
+            return Color(.darkGray)
+        case .ac, .plusMinus, .percent:
+            return Color(.lightGray)
+        default:
+            return .orange
+        }
+    }
+}
+
+ 
 struct ContentView: View {
     //MARK: - PROPERTIES
-    let buttons = [
-    ["AC","+","%","/"],
-    ["7","8","9","X"],
-    ["4","5","6","-"],
-    ["1","2","3","+"],
-    ["0","",".","="]
+    let buttons: [[CalculatorButton]] = [
+        [.ac,.plusMinus,.percent,.divide],
+    [.seven,.eight,.nine,.multiply],
+    [.four,.five,.six,.minus],
+    [.one,.two,.three,.plus],
+    [.zero,.zero,.dot,.equals]
     ]
     
     //MARK: - BODY
@@ -32,11 +50,11 @@ struct ContentView: View {
                 ForEach(buttons, id: \.self){ row in
                     HStack(spacing: 12){
                         ForEach(row, id: \.self){ button in
-                            Text(button)
+                            Text(button.rawValue)
                                 .font(.system(size: 32))
                                 .frame(width: self.buttonWidth(), height: self.buttonWidth())
                                 .foregroundColor(.white)
-                                .background(Color.yellow)
+                                .background(button.backgroundColor)
                                 .cornerRadius(self.buttonWidth())
                         }
                     }
