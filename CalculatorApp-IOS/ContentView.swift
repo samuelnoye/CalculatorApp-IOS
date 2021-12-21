@@ -19,20 +19,22 @@ struct ContentView: View {
     
     //MARK: - BODY
     var body: some View {
-        VStack{
-            Spacer()
-            ForEach(buttons, id: \.self){ row in
-                HStack{
-                    ForEach(row, id: \.self){ button in
-                        Text(button)
-                            .font(.system(size: 32))
-                            .frame(width: 70, height: 70)
-
+        ZStack(alignment: .bottom){
+            Color.black.ignoresSafeArea(.all)
+            VStack{
+                ForEach(buttons, id: \.self){ row in
+                    HStack{
+                        ForEach(row, id: \.self){ button in
+                            Text(button)
+                                .font(.system(size: 32))
+                                .frame(width: 70, height: 70)
+                                .foregroundColor(.white)
+                        }
                     }
                 }
             }
+            
         }
-        
     }
 }
 
