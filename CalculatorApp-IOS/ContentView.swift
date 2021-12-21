@@ -82,10 +82,10 @@ struct ContentView: View {
                                    label: {
                                 Text(button.title)
                                     .font(.system(size: 32))
-                                    .frame(width: self.buttonWidth(), height: self.buttonWidth())
+                                    .frame(width: self.buttonWidth(button: button), height: self.buttonWidth(button: button))
                                     .foregroundColor(.white)
                                     .background(button.backgroundColor)
-                                    .cornerRadius(self.buttonWidth())
+                                    .cornerRadius(self.buttonWidth(button: button))
                             })
                            
                         }
@@ -95,7 +95,10 @@ struct ContentView: View {
             
         }
     }
-    func buttonWidth()->CGFloat{
+    func buttonWidth(button: CalculatorButton)->CGFloat{
+        if button == .zero{
+           return (UIScreen.main.bounds.width - 4 * 12) / 4 * 2
+        }
         return (UIScreen.main.bounds.width - 5 * 12) / 4
     }
 }
