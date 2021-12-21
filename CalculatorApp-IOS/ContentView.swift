@@ -82,7 +82,7 @@ struct ContentView: View {
                                    label: {
                                 Text(button.title)
                                     .font(.system(size: 32))
-                                    .frame(width: self.buttonWidth(button: button), height: self.buttonWidth(button: button))
+                                    .frame(width: self.buttonWidth(button: button), height:(UIScreen.main.bounds.width - 5 * 12) / 4)
                                     .foregroundColor(.white)
                                     .background(button.backgroundColor)
                                     .cornerRadius(self.buttonWidth(button: button))
