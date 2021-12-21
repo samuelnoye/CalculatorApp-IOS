@@ -29,7 +29,8 @@ enum CalculatorButton: String{
         case .multiply: return "X"
         case .divide: return "/"
         case .equals: return "="
-        case .plusMinus: return "#"
+        case .plusMinus: return "+/-"
+        case .percent: return "%"
         case .dot: return "."
         default: return "AC"
             
@@ -75,12 +76,18 @@ struct ContentView: View {
                 ForEach(buttons, id: \.self){ row in
                     HStack(spacing: 12){
                         ForEach(row, id: \.self){ button in
-                            Text(button.title)
-                                .font(.system(size: 32))
-                                .frame(width: self.buttonWidth(), height: self.buttonWidth())
-                                .foregroundColor(.white)
-                                .background(button.backgroundColor)
-                                .cornerRadius(self.buttonWidth())
+                            Button(action:{
+                                
+                            },
+                                   label: {
+                                Text(button.title)
+                                    .font(.system(size: 32))
+                                    .frame(width: self.buttonWidth(), height: self.buttonWidth())
+                                    .foregroundColor(.white)
+                                    .background(button.backgroundColor)
+                                    .cornerRadius(self.buttonWidth())
+                            })
+                           
                         }
                     }
                 }
