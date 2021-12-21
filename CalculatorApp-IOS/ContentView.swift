@@ -34,8 +34,10 @@ struct ContentView: View {
                         ForEach(row, id: \.self){ button in
                             Text(button)
                                 .font(.system(size: 32))
-                                .frame(width: 70, height: 70)
+                                .frame(width: 80, height: 80)
                                 .foregroundColor(.white)
+                                .background(Color.yellow)
+                                .cornerRadius(40)
                         }
                     }
                 }
