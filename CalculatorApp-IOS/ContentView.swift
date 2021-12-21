@@ -22,9 +22,13 @@ struct ContentView: View {
         ZStack(alignment: .bottom){
             Color.black.ignoresSafeArea(.all)
             VStack{
-                Text("13")
-                    .foregroundColor(.white)
-                    .font(.system(size: 72))
+                HStack{
+                    Spacer()
+                    Text("13")
+                        .foregroundColor(.white)
+                        .font(.system(size: 64))
+                        .padding()
+                }
                 ForEach(buttons, id: \.self){ row in
                     HStack{
                         ForEach(row, id: \.self){ button in
