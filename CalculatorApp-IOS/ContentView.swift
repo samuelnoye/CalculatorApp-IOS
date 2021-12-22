@@ -26,7 +26,7 @@ enum CalculatorButton: String{
         case .nine: return "9"
         case .plus: return "+"
         case .minus: return "-"
-        case .multiply: return "X"
+        case .multiply: return "x"
         case .divide: return "÷"
         case .equals: return "="
         case .plusMinus: return "±"
@@ -49,9 +49,9 @@ enum CalculatorButton: String{
 }
 //Enc object
 class GlobalEnvironment: ObservableObject{
-    @Published var display = ""
+    @Published var display = "0"
     func receiveInput(calculatorButton: CalculatorButton){
-        self.display = button.title
+        self.display = calculatorButton.title
     }
 }
 
@@ -85,7 +85,7 @@ struct ContentView: View {
                     HStack(spacing: 12){
                         ForEach(row, id: \.self){ button in
                             Button(action:{
-                                self.env.display = button.title
+                                self.env.receiveInput(calculatorButton: button)
                             },
                                    label: {
                                 Text(button.title)
