@@ -82,7 +82,7 @@ struct ContentView: View {
                     HStack(spacing: 12){
                         ForEach(row, id: \.self){ button in
                             Button(action:{
-                                
+                                self.env.display = button.title
                             },
                                    label: {
                                 Text(button.title)
