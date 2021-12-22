@@ -50,6 +50,9 @@ enum CalculatorButton: String{
 //Enc object
 class GlobalEnvironment: ObservableObject{
     @Published var display = ""
+    func receiveInput(calculatorButton: CalculatorButton){
+        self.display = button.title
+    }
 }
 
 
