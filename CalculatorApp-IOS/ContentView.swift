@@ -27,9 +27,9 @@ enum CalculatorButton: String{
         case .plus: return "+"
         case .minus: return "-"
         case .multiply: return "X"
-        case .divide: return "/"
+        case .divide: return "÷"
         case .equals: return "="
-        case .plusMinus: return "+/-"
+        case .plusMinus: return "±"
         case .percent: return "%"
         case .dot: return "."
         default: return "AC"
@@ -61,6 +61,7 @@ struct ContentView: View {
     
     //MARK: - BODY
     var body: some View {
+        //Background
         ZStack(alignment: .bottom){
             Color.black.ignoresSafeArea(.all)
             VStack{
